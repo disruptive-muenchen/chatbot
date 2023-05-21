@@ -91,11 +91,6 @@ class Bot
      */
     public function process($payload)
     {
-        if ($payload['type'] == 'url_verification') {
-            echo $payload['challenge'];
-            exit;
-        }
-
         $this->logger->setEvent($payload['event_id']);
 
         // Check for duplicate events

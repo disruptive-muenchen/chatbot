@@ -15,6 +15,11 @@ if (php_sapi_name() === 'cli') {
 $payload = file_get_contents('php://input');
 $payload = json_decode($payload, true);
 
+if ($payload['type'] == 'url_verification') {
+    echo $payload['challenge'];
+    exit;
+}
+
 $logger = new Logger($config['log_file'], $config['log_file_lines']);
 
 try {
