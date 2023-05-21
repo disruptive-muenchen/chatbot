@@ -1,0 +1,6 @@
+# .gitignore
+.env
+data/database.db
+data/app.log
+data/personas/*.yml
+vendor/

@@ -1,0 +1,8 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^7.6",
+        "orhanerday/open-ai": "^4.7",
+        "symfony/yaml": "^5.4",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
