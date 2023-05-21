@@ -20,7 +20,7 @@ composer install
 ## Configuration
 
 1. Create a Slack app and obtain an OAuth token and the App ID.
-2. Get an OpenAI API key.
+2. Get an OpenAI API key, and store it in `.env`.
 3. Create an empty file named `database.db` in the `data/` directory.
 4. Ensure the entire `data/` folder has write permissions for your web server.
 
