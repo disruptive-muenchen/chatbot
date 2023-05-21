@@ -1,6 +1,6 @@
 # OpenAI Slack Bot
 
-This is a PHP-based Slack bot that uses OpenAI language models for generating responses to messages.
+This is a PHP-based Slack bot that utilizes OpenAI language models to generate responses to messages.
 
 ## Installation
 
@@ -10,10 +10,10 @@ Use git to clone the repository.
 git clone https://github.com/tony3dmc/ai-slackbot.git
 ```
 
-Navigate into the project directory and install PHP dependencies.
+Navigate into the project directory and install the PHP dependencies.
 
 ```bash
-cd repository
+cd ai-slackbot
 composer install
 ```
 
@@ -21,10 +21,10 @@ composer install
 
 1. Create a Slack app and obtain an OAuth token and the App ID.
 2. Get an OpenAI API key.
-3. Create and empty data/database.db file.
-4. Ensure the whole data/ folder is writable by your webserver
+3. Create an empty file named `database.db` in the `data/` directory.
+4. Ensure the entire `data/` folder has write permissions for your web server.
 
-## Slack setup
+## Slack Setup
 
 1. **Create a Slack App:**
    - Go to https://api.slack.com/apps.
@@ -56,8 +56,8 @@ oauth_config:
    - After the app is created, install the app into your workspace by clicking on "Install App to Workspace".
    - You'll need to allow the requested permissions.
 
-3. **Save the details**
-   - Save the Bot User OAuth Token and the App ID. You will need those for the persona files.
+3. **Save the Details**
+   - Save the Bot User OAuth Token and the App ID. You will need these for the persona files.
 
 4. **Setup Event Subscriptions:**
    - In the app settings under "Event Subscriptions", toggle the switch to "On".
@@ -71,13 +71,13 @@ oauth_config:
 
 ## Usage
 
-To use the bot, create a persona YAML file in the data/personas/ folder. See the examples/ folder for a couple of examples to get started.
+To use the bot, create a persona YAML file in the `data/personas/` folder. See the `examples/` folder for some starting points.
 
 1. Open the `data/personas/` directory in your file system.
 
-2. In this directory, create a new YAML file for your persona. The filename can be anything you want, but should end with the `.yml` extension. For instance, you might name your file `tony.yml`.
+2. In this directory, create a new YAML file for your persona. The filename can be anything you want, but it should end with the `.yml` extension. For instance, you might name your file `tony.yml`.
 
-3. The persona file should follow the structure shown in the example. Here is an explanation for each attribute:
+3. The persona file should follow the structure shown in the example. Here is an explanation of each attribute:
 
    - `name`: The persona's name.
    
@@ -87,9 +87,11 @@ To use the bot, create a persona YAML file in the data/personas/ folder. See the
    
    - `system_prompt`: A block of text that describes the persona. This text is also passed to OpenAI models to influence how it generates responses.
    
-   - `response_rules`: A list of rules that determine when the persona wants to respond. Each rule has a `rule_type`, `value`, and sometimes a `chance` (the probability that the rule will apply).
+   - `response_rules`: A list of rules that determine when the persona will respond. Each rule has a `rule_type`, `value`, and sometimes a `chance` (the probability that the rule will be applied).
 
-Here's an example as a guide:
+Here's an example as a guide
+
+:
 
 ```yaml
 name: 'Tony'
@@ -111,7 +113,7 @@ response_rules:
 
 Remember to always use valid YAML syntax and to follow the structure demonstrated in the example.
 
-Multiple personas are encouraged. Create AI bots that interact with each other!
+Creating multiple personas is encouraged. Generate AI bots that interact with each other!
 
 ## Contributing
 
