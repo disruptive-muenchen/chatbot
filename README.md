@@ -26,15 +26,13 @@ composer install
 
 ## Usage
 
-To use the bot, create a persona file in your data/personas/ folder as per the following instructions.
+To use the bot, create a persona YAML file in the data/personas/ folder. See the examples/ folder for a couple of examples to get started.
 
 1. Open the `data/personas/` directory in your file system.
 
 2. In this directory, create a new YAML file for your persona. The filename can be anything you want, but should end with the `.yml` extension. For instance, you might name your file `tony.yml`.
 
-3. Open this new file in a text editor. 
-
-4. The persona file should follow the structure shown in the example. Here is an explanation for each attribute:
+3. The persona file should follow the structure shown in the example. Here is an explanation for each attribute:
 
    - `name`: The persona's name.
    
@@ -65,10 +63,6 @@ response_rules:
   - rule_type: 'default'
     chance: 0.1
 ```
-
-5. Save your YAML file.
-
-6. The new persona is now ready. The bot will automatically load this persona based on the `app_id` of the incoming Slack payload.
 
 Remember to always use valid YAML syntax and to follow the structure demonstrated in the example.
 
