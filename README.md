@@ -24,6 +24,51 @@ composer install
 3. Create and empty data/database.db file.
 4. Ensure the whole data/ folder is writable by your webserver
 
+## Slack setup
+
+1. **Create a Slack App:**
+   - Go to https://api.slack.com/apps.
+   - Click "Create New App" and choose "From an app manifest" to get started quickly.
+   - Choose "YAML" for the manifest format.
+   - Paste the following YAML code into the editor, replacing "your-bot-name" with your desired bot name:
+
+```YAML
+_metadata:
+  major_version: 1
+  minor_version: 1
+display_information:
+  name: your-bot-name
+  description: A useful description
+features:
+  bot_user:
+    display_name: your-bot-name
+    always_online: true
+oauth_config:
+  scopes:
+    bot:
+      - channels:history
+      - chat:write
+```
+
+   - Click "Next" and then "Create".
+
+2. **Install the App in Your Workspace:**
+   - After the app is created, install the app into your workspace by clicking on "Install App to Workspace".
+   - You'll need to allow the requested permissions.
+
+3. **Save the details**
+   - Save the Bot User OAuth Token and the App ID. You will need those for the persona files.
+
+4. **Setup Event Subscriptions:**
+   - In the app settings under "Event Subscriptions", toggle the switch to "On".
+   - In the "Request URL" field, enter the URL where your PHP script is hosted. It must be publicly accessible and SSL protected.
+   - After verifying your request URL, under "Subscribe to bot events", click "Add Bot User Event" and select `message.channels`.
+   - Save the changes.
+
+5. **Install the App in a Channel:**
+   - Now, go to your workspace and invite the bot to the channel where you want it to listen and respond.
+
+
 ## Usage
 
 To use the bot, create a persona YAML file in the data/personas/ folder. See the examples/ folder for a couple of examples to get started.
